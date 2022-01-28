@@ -6,3 +6,5 @@
 
     info.innerHTML=`${firstName} ${lastName}`
     infoClock.innerHTML=date
+
+    console.log(!!2)
