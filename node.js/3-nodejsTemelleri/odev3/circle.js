@@ -10,12 +10,7 @@ function circleCircumference(yariCap){
     console.log(`Çevre: ${cevre}`)
 }
 
-// module.exports = circleArea;
-// module.exports = circleCircumference;
-
 module.exports = {
     circleArea,
     circleCircumference
 }
-
-// import
