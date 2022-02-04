@@ -1,9 +1,31 @@
-global.console.log("LOG YAZILDI")
+const http = require('http')
 
-global.console.log(__dirname)
+const server = http.createServer((req,res)=>{
 
-global.setTimeout(() =>{
-    console.log("3 saniye bekle")
-},3000)
+    const url = req.url
 
-console.log(window)
+    if(url === '/'){
+        res.writeHead(200,{'Content-Type' :'text/html'})
+        res.write('<h1>INDEX SAYFASI</h1>')
+    }
+    
+    else if(url === '/about'){
+        res.write('ABOUT SAYFASI')
+    }
+
+    else if(url === '/contact'){
+        res.write('CONTACT SAYFASI')
+    }
+
+    else{
+        res.write('404 SAYFA BULUNAMADI')
+    }
+
+    res.end();
+});
+
+const port = 3000;
+
+server.listen(port,()=>{
+    console.log("Sunucu port 3000 de başlatıldı")
+})
